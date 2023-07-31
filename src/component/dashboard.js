@@ -11,6 +11,7 @@ import RefreshIcon from '@mui/icons-material/Refresh';
 import EditIcon from '@mui/icons-material/Edit';
 import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 import defaultImage from '../Assests/img.jpg'
+import './dashboard.css'
 
 
 function Dashboard() {

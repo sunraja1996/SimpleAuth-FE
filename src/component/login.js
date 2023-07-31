@@ -59,7 +59,7 @@ function Login() {
     <div className='login-wrapper'>
 
 
-      <Form style={{width:'50%'}}>
+      <Form>
         <h1 className='head'>Login</h1>
         <Form.Group className="mb-3">
           <Form.Label>Email address</Form.Label>

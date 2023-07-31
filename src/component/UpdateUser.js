@@ -76,7 +76,7 @@ function UpdateUser() {
 
   return (
     <div className='signup-wrapper'>
-      <Form style={{ width: '50%' }}>
+      <Form>
         <h1 className='head'>Update User</h1>
 
         <Form.Group className='mb-3'>

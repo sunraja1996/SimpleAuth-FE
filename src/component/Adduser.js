@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './login.css'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import './login.css'
 
 function Adduser() {
 
@@ -62,7 +63,7 @@ function Adduser() {
     <div className='signup-wrapper'>
 
 
-      <Form style={{width:'50%'}}>
+      <Form>
         <h1 className='head'>ADD USER</h1>
 
         <Form.Group className="mb-3">

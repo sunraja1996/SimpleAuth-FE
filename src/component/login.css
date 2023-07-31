@@ -97,3 +97,55 @@ input{
   border-radius: 5px;
   cursor: pointer;
 } */
+
+
+/* Base styles for the login form */
+Form {
+  width: 50%;
+  margin: auto;
+}
+
+.head {
+  text-align: center;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+Button {
+  font-family: 'Lugrasimo', cursive;
+}
+
+/* Media query for screens with a maximum width of 768px (e.g., tablets and smaller screens) */
+@media screen and (max-width: 1080px) {
+  Form {
+    width: 50%; /* Adjust the width for smaller screens */
+  }
+}
+@media screen and (max-width: 768px) {
+  Form {
+    width: 80%; /* Adjust the width for smaller screens */
+  }
+}
+
+/* Media query for screens with a maximum width of 576px (e.g., mobile phones) */
+@media screen and (max-width: 576px) {
+  Form {
+    width: 90%; /* Adjust the width for even smaller screens */
+  }
+
+  .mb-3 {
+    margin-bottom: 0.5rem; /* Reduce the margin for smaller screens */
+  }
+}
+
+@media screen and (max-width: 375px) {
+  Form {
+    width: 90%; /* Adjust the width for even smaller screens */
+  }
+
+  .mb-3 {
+    margin-bottom: 0.5rem; /* Reduce the margin for smaller screens */
+  }
+}

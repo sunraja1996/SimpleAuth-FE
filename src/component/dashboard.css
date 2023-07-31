@@ -1,0 +1,81 @@
+/* Default styles for PC default size */
+/* Assuming the PC default size is above 992px width */
+
+/* Center the container */
+.d-flex.justify-content-around {
+    justify-content: space-around;
+  }
+  
+  /* Center the text and buttons */
+  .text-center,
+  .d-flex.justify-content-around.align-items-center {
+    text-align: center;
+  }
+  
+  /* Set a margin for the dashboard heading */
+  .text-center {
+    margin: 15px;
+  }
+  
+  /* Apply font-family to the dashboard heading */
+  .text-center {
+    font-family: 'Lugrasimo', cursive;
+  }
+  
+  /* Apply styles for the buttons */
+  .button-group {
+    margin-bottom: 15px; /* Add some space below the button group */
+  }
+  
+  /* Media query for screens with a maximum width of 768px (e.g., tablets) */
+  @media screen and (max-width: 768px) {
+    /* Stack the buttons vertically */
+    .button-group {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  /* Media query for screens with a maximum width of 575px (e.g., large mobile phones) */
+  @media screen and (max-width: 575px) {
+    /* Center the dashboard heading and button group vertically */
+    .d-flex.justify-content-around {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    /* Reduce the margin for the dashboard heading */
+    .text-center {
+      margin: 10px;
+    }
+  
+    /* Make the cards stack horizontally on smaller screens */
+    .row-cols-1.row-cols-md-4 {
+      flex-direction: row;
+    }
+  }
+  
+  /* Media query for screens with a maximum width of 375px (e.g., small mobile phones) */
+  @media screen and (max-width: 375px) {
+    /* Reduce the margin for the dashboard heading further */
+    .text-center {
+      margin: 5px;
+    }
+  
+    /* Make the cards stack horizontally and reduce the card width on smaller screens */
+    .row-cols-1.row-cols-md-4 {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  
+    .col {
+      width: 90%; /* Adjust the card width to fit the smaller screen */
+    }
+  
+    /* Center the buttons and stack them vertically */
+    .button-group {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
