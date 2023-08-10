@@ -1,0 +1,89 @@
+let [user, setUser] = useState(null)
+
+  const getuser = async () => {
+
+    try {
+      
+      const getUser = await axios.get(`${process.env.REACT_APP_APIURL}/login/success`, {
+        headers: {
+          Accept:"application/json",
+          "Content-Type" : "application/json"
+        }
+      })
+
+        console.log("User_FE : ",getUser.data);
+
+      if(getUser.data.statusCode===200){
+        toast.success('Google Signin Successfull !', {
+          position: "bottom-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        })
+        setUser(getUser.data.user)
+        console.log(getUser.data.user);
+
+      }else{
+        toast.error('Google Signin Failed', {
+          position: 'top-right',
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored',
+        });
+      }
+
+    } catch (error) {
+      toast.error('Internal Server Error', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored',
+      });
+    }
+
+  }
+
+  
+  console.log(user);
+
+  useEffect(() => {
+    getuser();
+  },[])
+
+
+
+const [user, setUser] = useState(null)
+
+  useEffect(() => {
+     const getuser = () => {
+      fetch(`${process.env.REACT_APP_APIURL}/login/success`, {
+        method :"GET",
+        credentials:"include",
+        headers: {
+          Accept:"application/json",
+          "Content-Type" : "application/json"
+          "Access-Control-Allow-Credentials":true
+        }
+      }).then((res)=>{
+        if (res.statusCode===200) return res.json();
+        throw new Error(""Auth failed)
+      }).then(resObj=>{
+        setUser(resObj.user)
+      }).catch(err=>{
+        console.log("Error")
+      })
+     }
+     getuser()
+  },[])
