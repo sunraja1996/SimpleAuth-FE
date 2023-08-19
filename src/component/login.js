@@ -20,6 +20,7 @@ function Login() {
   let navigate = useNavigate()
   
   let login = async () => {
+   try {
     const signin = await axios.post(`${process.env.REACT_APP_APIURL}/users/login`, { email, password })
     if (signin.data.statusCode === 200) {
       toast.success('Login Successfull !', {
@@ -56,6 +57,19 @@ function Login() {
       });
     }
 
+   } catch (error) {
+    console.error("Axios Error:", error);
+    toast.error("Network Error. Please try again later.", {
+      position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+    });
+   }
   }
 
   
